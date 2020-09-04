@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="WioFighter"
+run/main_scene="res://Scenes/Gameplay.tscn"
 config/icon="res://icon.png"
 
 [rendering]
