@@ -11,6 +11,8 @@ var on_ground = false
 
 func _physics_process(delta):
 	
+	
+	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		$AnimatedSprite.play("run")
@@ -19,6 +21,8 @@ func _physics_process(delta):
 		velocity.x = -SPEED
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = true
+	elif Input.is_action_pressed("ui_down"):
+			$AnimatedSprite.play("legHit")	
 	else:
 		velocity.x = 0
 		$AnimatedSprite.play("idle")
@@ -42,8 +46,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play("fall")
 			
 	
-	if Input.is_action_just_released("ui_down"):
-			$AnimatedSprite.play("legHit")	
+	
 	
 	velocity = move_and_slide(velocity, FLOOR)
 	

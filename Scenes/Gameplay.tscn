@@ -187,8 +187,8 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
 scale = Vector2( 0.207407, 0.17037 )
 frames = SubResource( 2 )
-animation = "run"
-frame = 27
+animation = "fall"
+frame = 6
 playing = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
