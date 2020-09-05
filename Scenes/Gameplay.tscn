@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://Asstes/Wiola/Idle/0000.png" type="Texture" id=2]
@@ -71,10 +71,66 @@
 [ext_resource path="res://Asstes/Wiola/Walk/0048.png" type="Texture" id=69]
 [ext_resource path="res://Asstes/Wiola/Walk/0049.png" type="Texture" id=70]
 [ext_resource path="res://Asstes/Wiola/Walk/0050.png" type="Texture" id=71]
+[ext_resource path="res://Asstes/Background/untitled.png" type="Texture" id=72]
+[ext_resource path="res://Asstes/Wiola/LegHit/0029.png" type="Texture" id=73]
+[ext_resource path="res://Asstes/Wiola/LegHit/0030.png" type="Texture" id=74]
+[ext_resource path="res://Asstes/Wiola/LegHit/0028.png" type="Texture" id=75]
+[ext_resource path="res://Asstes/Wiola/LegHit/0032.png" type="Texture" id=76]
+[ext_resource path="res://Asstes/Wiola/LegHit/0031.png" type="Texture" id=77]
+[ext_resource path="res://Asstes/Wiola/LegHit/0035.png" type="Texture" id=78]
+[ext_resource path="res://Asstes/Wiola/LegHit/0033.png" type="Texture" id=79]
+[ext_resource path="res://Asstes/Wiola/LegHit/0034.png" type="Texture" id=80]
+[ext_resource path="res://Asstes/Wiola/LegHit/0001.png" type="Texture" id=81]
+[ext_resource path="res://Asstes/Wiola/LegHit/0005.png" type="Texture" id=82]
+[ext_resource path="res://Asstes/Wiola/LegHit/0008.png" type="Texture" id=83]
+[ext_resource path="res://Asstes/Wiola/LegHit/0006.png" type="Texture" id=84]
+[ext_resource path="res://Asstes/Wiola/LegHit/0012.png" type="Texture" id=85]
+[ext_resource path="res://Asstes/Wiola/LegHit/0009.png" type="Texture" id=86]
+[ext_resource path="res://Asstes/Wiola/LegHit/0004.png" type="Texture" id=87]
+[ext_resource path="res://Asstes/Wiola/LegHit/0007.png" type="Texture" id=88]
+[ext_resource path="res://Asstes/Wiola/LegHit/0010.png" type="Texture" id=89]
+[ext_resource path="res://Asstes/Wiola/LegHit/0011.png" type="Texture" id=90]
+[ext_resource path="res://Asstes/Wiola/LegHit/0013.png" type="Texture" id=91]
+[ext_resource path="res://Asstes/Wiola/LegHit/0014.png" type="Texture" id=92]
+[ext_resource path="res://Asstes/Wiola/LegHit/0002.png" type="Texture" id=93]
+[ext_resource path="res://Asstes/Wiola/LegHit/0016.png" type="Texture" id=94]
+[ext_resource path="res://Asstes/Wiola/LegHit/0017.png" type="Texture" id=95]
+[ext_resource path="res://Asstes/Wiola/LegHit/0018.png" type="Texture" id=96]
+[ext_resource path="res://Asstes/Wiola/LegHit/0019.png" type="Texture" id=97]
+[ext_resource path="res://Asstes/Wiola/LegHit/0015.png" type="Texture" id=98]
+[ext_resource path="res://Asstes/Wiola/LegHit/0020.png" type="Texture" id=99]
+[ext_resource path="res://Asstes/Wiola/LegHit/0021.png" type="Texture" id=100]
+[ext_resource path="res://Asstes/Wiola/LegHit/0003.png" type="Texture" id=101]
+[ext_resource path="res://Asstes/Wiola/LegHit/0024.png" type="Texture" id=102]
+[ext_resource path="res://Asstes/Wiola/LegHit/0026.png" type="Texture" id=103]
+[ext_resource path="res://Asstes/Wiola/LegHit/0022.png" type="Texture" id=104]
+[ext_resource path="res://Asstes/Wiola/LegHit/0027.png" type="Texture" id=105]
+[ext_resource path="res://Asstes/Wiola/LegHit/0025.png" type="Texture" id=106]
+[ext_resource path="res://Asstes/Wiola/LegHit/0023.png" type="Texture" id=107]
+[ext_resource path="res://Asstes/Wiola/Jump/0006.png" type="Texture" id=108]
+[ext_resource path="res://Asstes/Wiola/Jump/0007.png" type="Texture" id=109]
+[ext_resource path="res://Asstes/Wiola/Jump/0004.png" type="Texture" id=110]
+[ext_resource path="res://Asstes/Wiola/Jump/0005.png" type="Texture" id=111]
+[ext_resource path="res://Asstes/Wiola/Jump/0001.png" type="Texture" id=112]
+[ext_resource path="res://Asstes/Wiola/Jump/0003.png" type="Texture" id=113]
+[ext_resource path="res://Asstes/Wiola/Jump/0002.png" type="Texture" id=114]
+[ext_resource path="res://Asstes/Wiola/Jump/0008.png" type="Texture" id=115]
+[ext_resource path="res://Asstes/Wiola/Jump/0011.png" type="Texture" id=116]
+[ext_resource path="res://Asstes/Wiola/Jump/0020.png" type="Texture" id=117]
+[ext_resource path="res://Asstes/Wiola/Jump/0014.png" type="Texture" id=118]
+[ext_resource path="res://Asstes/Wiola/Jump/0010.png" type="Texture" id=119]
+[ext_resource path="res://Asstes/Wiola/Jump/0015.png" type="Texture" id=120]
+[ext_resource path="res://Asstes/Wiola/Jump/0012.png" type="Texture" id=121]
+[ext_resource path="res://Asstes/Wiola/Jump/0013.png" type="Texture" id=122]
+[ext_resource path="res://Asstes/Wiola/Jump/0019.png" type="Texture" id=123]
+[ext_resource path="res://Asstes/Wiola/Jump/0009.png" type="Texture" id=124]
+[ext_resource path="res://Asstes/Wiola/Jump/0017.png" type="Texture" id=125]
+[ext_resource path="res://Asstes/Wiola/Jump/0016.png" type="Texture" id=126]
+[ext_resource path="res://Asstes/Wiola/Jump/0018.png" type="Texture" id=127]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 37.0
-height = 107.0
+height = 89.7528
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -83,11 +139,29 @@ animations = [ {
 "name": "idle",
 "speed": 100.0
 }, {
+"frames": [ ExtResource( 112 ), ExtResource( 114 ), ExtResource( 113 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 124 ), ExtResource( 119 ), ExtResource( 116 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 126 ), ExtResource( 125 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 117 ) ],
+"loop": true,
+"name": "jumpPress",
+"speed": 100.0
+}, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ) ],
 "loop": true,
 "name": "run",
 "speed": 100.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "legHit",
+"speed": 100.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "jumpRelease",
+"speed": 100.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 836.591, 20.3474 )
 
 [node name="Gameplay" type="Node2D"]
 position = Vector2( 84, 72 )
@@ -104,7 +178,7 @@ __meta__ = {
 }
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 164.5, 64 )
+position = Vector2( -16.6399, 418.12 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -116,6 +190,28 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
 scale = Vector2( 0.207407, 0.17037 )
 frames = SubResource( 2 )
-animation = "idle"
-frame = 14
+animation = "jumpRelease"
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+
+[node name="untitled" type="Sprite" parent="ParallaxBackground/Sprite"]
+position = Vector2( 511.443, 299.709 )
+scale = Vector2( 0.536181, 0.556116 )
+texture = ExtResource( 72 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( -35.5046, 591.734 )
+scale = Vector2( 1.08095, -0.671156 )
+points = PoolVector2Array( -227.161, 125.941, 1062.38, 127.948 )
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Line2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/StaticBody2D"]
+position = Vector2( 339.343, 114.416 )
+scale = Vector2( 0.92511, -1.48997 )
+shape = SubResource( 3 )

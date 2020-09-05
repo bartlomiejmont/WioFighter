@@ -12,26 +12,36 @@ func get_input():
 	velocity = Vector2()
 	
 	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
+		velocity.x += 3
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = false
+		
 	elif Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
+		velocity.x -= 3
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = true
+		
+	elif Input.is_action_pressed("ui_up"):
+		velocity.y = jumpPower
+		$AnimatedSprite.play("jumpPress")
+	elif Input.is_action_pressed("ui_down"):
+		$AnimatedSprite.play("legHit")
+		
 	else:
 		$AnimatedSprite.play("idle")
-#	if Input.is_action_pressed("ui_up"):
-#		velocity.y = jumpPower
+		
 	
-#	velocity.y += gravity
+	
+	
+	
+	velocity.y += gravity
 	velocity = velocity.normalized() * speed
 	
 	move_and_slide(velocity)
 
 func _physics_process(delta):
 	get_input()
-#	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 	
 	
 	
