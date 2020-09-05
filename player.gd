@@ -1,47 +1,51 @@
 extends KinematicBody2D
 
-const gravity = 10
-const jumpPower = -250
+const SPEED = 60
+const GRAVITY = 10
+const JUMP_POWER = -400
 const FLOOR = Vector2(0, -1)
-
-export (int) var speed = 200
 
 var velocity = Vector2()
 
-func get_input():
-	velocity = Vector2()
-	
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 3
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = false
-		
-	elif Input.is_action_pressed('ui_left'):
-		velocity.x -= 3
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = true
-		
-	elif Input.is_action_pressed("ui_up"):
-		velocity.y = jumpPower
-		$AnimatedSprite.play("jumpPress")
-	elif Input.is_action_pressed("ui_down"):
-		$AnimatedSprite.play("legHit")
-		
-	else:
-		$AnimatedSprite.play("idle")
-		
-	
-	
-	
-	
-	velocity.y += gravity
-	velocity = velocity.normalized() * speed
-	
-	move_and_slide(velocity)
+var on_ground = false
 
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	
+	if Input.is_action_pressed("ui_right"):
+		velocity.x = SPEED
+		$AnimatedSprite.play("run")
+		$AnimatedSprite.flip_h = false
+	elif Input.is_action_pressed("ui_left"):
+		velocity.x = -SPEED
+		$AnimatedSprite.play("run")
+		$AnimatedSprite.flip_h = true
+	else:
+		velocity.x = 0
+		$AnimatedSprite.play("idle")
+		
+	if Input.is_action_pressed("ui_up"):
+		if on_ground == true:
+			velocity.y = JUMP_POWER
+			
+			on_ground = false
+			
+	velocity.y += GRAVITY
+	
+	if is_on_floor():
+		on_ground = true
+	else:
+		on_ground = false
+		
+		if velocity.y < 0:
+			$AnimatedSprite.play("jumpPress")
+		else:
+			$AnimatedSprite.play("fall")
+			
+	
+	if Input.is_action_just_released("ui_down"):
+			$AnimatedSprite.play("legHit")	
+	
+	velocity = move_and_slide(velocity, FLOOR)
 	
 	
-	
+		
