@@ -157,7 +157,7 @@ animations = [ {
 "frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
 "loop": true,
 "name": "legHit",
-"speed": 60.0
+"speed": 100.0
 } ]
 
 [sub_resource type="AnimationNodeAnimation" id=3]
@@ -265,7 +265,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=24]
 resource_name = "LegHit"
-length = 0.5
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -285,7 +286,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -326,7 +327,7 @@ shape = SubResource( 1 )
 scale = Vector2( 0.207407, 0.17037 )
 frames = SubResource( 2 )
 animation = "legHit"
-frame = 31
+frame = 3
 playing = true
 
 [node name="AnimationTree" type="AnimationTree" parent="player"]
