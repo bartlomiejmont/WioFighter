@@ -149,33 +149,23 @@ animations = [ {
 "name": "jumpPress",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
-"loop": true,
-"name": "legHit",
-"speed": 50.0
-}, {
 "frames": [ ExtResource( 121 ), ExtResource( 122 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 126 ), ExtResource( 125 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 117 ) ],
 "loop": true,
 "name": "fall",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "legHit",
+"speed": 50.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 836.591, 20.3474 )
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 942.795, 507.17 )
+b = Vector2( -82.3624, 508.505 )
 
 [node name="Gameplay" type="Node2D"]
 position = Vector2( 84, 72 )
-
-[node name="background" type="ColorRect" parent="."]
-visible = false
-margin_left = -183.0
-margin_top = -87.0
-margin_right = 514.0
-margin_bottom = 335.0
-color = Color( 0.0901961, 0.364706, 0.713726, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( -16.6399, 418.12 )
@@ -188,29 +178,18 @@ shape = SubResource( 1 )
 scale = Vector2( 0.207407, 0.17037 )
 frames = SubResource( 2 )
 animation = "fall"
-frame = 6
+frame = 3
 playing = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-
-[node name="untitled" type="Sprite" parent="ParallaxBackground/Sprite"]
-position = Vector2( 511.443, 299.709 )
-scale = Vector2( 0.536181, 0.556116 )
+[node name="BG" type="Sprite" parent="Background"]
+position = Vector2( 514.074, 300.793 )
+scale = Vector2( 0.533414, 0.558936 )
 texture = ExtResource( 72 )
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2( -35.5046, 591.734 )
-scale = Vector2( 1.08095, -0.671156 )
-points = PoolVector2Array( -227.161, 125.941, 1062.38, 127.948 )
-default_color = Color( 0, 0, 0, 1 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Line2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/StaticBody2D"]
-position = Vector2( 339.343, 114.416 )
-scale = Vector2( 0.92511, -1.48997 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 3 )
