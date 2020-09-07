@@ -13,6 +13,8 @@ export var canMove = true
 
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	canMove = true
+	$AnimationPlayer.play("Idle")
 
 func _physics_process(delta):
 	if Input.is_action_pressed("leg_hit"): #leg_hit - D
