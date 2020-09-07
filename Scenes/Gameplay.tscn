@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=2]
+[gd_scene load_steps=154 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://Asstes/Wiola/Idle/0000.png" type="Texture" id=2]
@@ -137,7 +137,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "idle",
-"speed": 100.0
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ) ],
 "loop": true,
@@ -147,39 +147,191 @@ animations = [ {
 "frames": [ ExtResource( 112 ), ExtResource( 114 ), ExtResource( 113 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 124 ), ExtResource( 119 ), ExtResource( 116 ) ],
 "loop": true,
 "name": "jumpPress",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
-"loop": true,
-"name": "legHit",
-"speed": 50.0
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 121 ), ExtResource( 122 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 126 ), ExtResource( 125 ), ExtResource( 127 ), ExtResource( 123 ), ExtResource( 117 ) ],
 "loop": true,
 "name": "fall",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 93 ), ExtResource( 101 ), ExtResource( 87 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 88 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 85 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 98 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 102 ), ExtResource( 106 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "legHit",
+"speed": 100.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 836.591, 20.3474 )
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Fall"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "LegHit"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/Fall/node = SubResource( 3 )
+states/Fall/position = Vector2( -689, 153 )
+states/Idle/node = SubResource( 4 )
+states/Idle/position = Vector2( -1055, 259 )
+states/Jump/node = SubResource( 5 )
+states/Jump/position = Vector2( -927, 140 )
+states/LegHit/node = SubResource( 6 )
+states/LegHit/position = Vector2( -1216, 140 )
+states/Run/node = SubResource( 7 )
+states/Run/position = Vector2( -1013, 44 )
+transitions = [ "Run", "Idle", SubResource( 8 ), "Idle", "Run", SubResource( 9 ), "Run", "Jump", SubResource( 10 ), "Idle", "Jump", SubResource( 11 ), "Run", "LegHit", SubResource( 13 ), "Idle", "LegHit", SubResource( 14 ), "LegHit", "Idle", SubResource( 15 ), "Jump", "Fall", SubResource( 12 ), "Fall", "Idle", SubResource( 16 ), "Run", "Fall", SubResource( 17 ), "Idle", "Fall", SubResource( 18 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -1460.88, 47 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
+
+[sub_resource type="Animation" id=21]
+resource_name = "Fall"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fall" ]
+}
+
+[sub_resource type="Animation" id=22]
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "Jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "jumpPress" ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "LegHit"
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "legHit" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:canMove")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:velocity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+
+[sub_resource type="SegmentShape2D" id=26]
+a = Vector2( 942.795, 507.17 )
+b = Vector2( -82.3624, 508.505 )
 
 [node name="Gameplay" type="Node2D"]
 position = Vector2( 84, 72 )
 
-[node name="background" type="ColorRect" parent="."]
-visible = false
-margin_left = -183.0
-margin_top = -87.0
-margin_right = 514.0
-margin_bottom = 335.0
-color = Color( 0.0901961, 0.364706, 0.713726, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( -16.6399, 418.12 )
+position = Vector2( 434.532, 408.681 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+canMove = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource( 1 )
@@ -187,30 +339,31 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
 scale = Vector2( 0.207407, 0.17037 )
 frames = SubResource( 2 )
-animation = "fall"
-frame = 6
+animation = "idle"
 playing = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="player"]
+tree_root = SubResource( 19 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 20 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+anims/Fall = SubResource( 21 )
+anims/Idle = SubResource( 22 )
+anims/Jump = SubResource( 23 )
+anims/LegHit = SubResource( 24 )
+anims/Run = SubResource( 25 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="untitled" type="Sprite" parent="ParallaxBackground/Sprite"]
-position = Vector2( 511.443, 299.709 )
-scale = Vector2( 0.536181, 0.556116 )
+[node name="BackgroundSprite" type="Sprite" parent="Background"]
+position = Vector2( 514.074, 300.793 )
+scale = Vector2( 0.533414, 0.558936 )
 texture = ExtResource( 72 )
 
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2( -35.5046, 591.734 )
-scale = Vector2( 1.08095, -0.671156 )
-points = PoolVector2Array( -227.161, 125.941, 1062.38, 127.948 )
-default_color = Color( 0, 0, 0, 1 )
+[node name="FloorBody" type="StaticBody2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Line2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/StaticBody2D"]
-position = Vector2( 339.343, 114.416 )
-scale = Vector2( 0.92511, -1.48997 )
-shape = SubResource( 3 )
+[node name="FloorBodyShape" type="CollisionShape2D" parent="FloorBody"]
+shape = SubResource( 26 )
